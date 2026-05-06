@@ -1,0 +1,19 @@
+{
+  "name": "synopsis",
+  "version": "1.0.0",
+  "description": "Smart Inventory & Asset Tracking System",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend",
+    "shared"
+  ],
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\"",
+    "seed": "cd backend && npx ts-node prisma/seed.ts"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
